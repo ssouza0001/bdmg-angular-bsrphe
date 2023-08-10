@@ -3,3 +3,19 @@
 <br />
 
 <div>Escreva seu código HTML abaixo:</div>
+
+<form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="cep">CEP</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cep"
+      id="cep"
+      required
+      formControlName="cep"
+    />
+  </div>
+
+  <input type="submit" class="btn btn-primary mt-4" value="Salvar" />
+</form>

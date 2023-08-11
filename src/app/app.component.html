@@ -3,6 +3,7 @@
 <br />
 
 <div>Escreva seu código HTML abaixo:</div>
+<br />
 
 <form class="example-form" [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width">
@@ -115,14 +116,16 @@
       formControlName="siafi"
     />
   </mat-form-field>
+
   <div class="example-button-row">
-    <button mat-raised-button="primary" type="submit">Salvar</button>
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
     <button
-      mat-raised-button="primary"
+      mat-raised-button
+      color="primary"
       type="button"
       (click)="retornaUsuarioStorage()"
     >
-      Retornar Usuário
+      Consultar Usuário Salvo
     </button>
   </div>
 </form>

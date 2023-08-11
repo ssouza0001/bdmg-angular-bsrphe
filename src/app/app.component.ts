@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   onSubmit() {
     this.service.salvaUsuario(this.formUsuario.value).subscribe({
       next: (e) => {
-        console.log(e);
+        alert(e);
       },
       error: (e) => {
         console.log(e);
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
   retornaUsuarioStorage() {
     this.service.retornaUsuarioStorage().subscribe({
       next: (e: any) => {
-        console.log(e);
+        alert(JSON.stringify(e));
       },
       error: (e) => {
         console.log(e);

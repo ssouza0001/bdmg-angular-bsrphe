@@ -2,6 +2,7 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { AppService } from './app.service';
 import { Usuario } from './models/usuario.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { LocalStorageService } from './app.local-storage.service';
 
 @Component({
   selector: 'my-app',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.createForm(new Usuario());
-    this.service.getUsuario().subscribe({
+    this.service._getUsuario().subscribe({
       next: (u: Usuario) => {
         this.usuario = u;
         this.createForm(this.usuario);
@@ -46,7 +47,19 @@ export class AppComponent implements OnInit {
       next: (e) => {
         console.log(e);
       },
-      error: (e) => {},
+      error: (e) => {
+        console.log(e);
+      },
+    });
+  }
+  retornaUsuarioStorage() {
+    this.service.retornaUsuarioStorage().subscribe({
+      next: (e: any) => {
+        console.log(e);
+      },
+      error: (e) => {
+        console.log(e);
+      },
     });
   }
 }

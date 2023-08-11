@@ -2,7 +2,6 @@ import { Component, OnInit, VERSION } from '@angular/core';
 import { AppService } from './app.service';
 import { Usuario } from './models/usuario.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { LocalStorageService } from './app.local-storage.service';
 
 @Component({
   selector: 'my-app',
@@ -40,6 +39,8 @@ export class AppComponent implements OnInit {
       ddd: [usuario.ddd],
       siafi: [usuario.siafi],
     });
+    this.formUsuario.controls['ibge'].disable();
+    this.formUsuario.controls['siafi'].disable();
   }
 
   onSubmit() {

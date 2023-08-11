@@ -4,10 +4,11 @@
 
 <div>Escreva seu código HTML abaixo:</div>
 
-<form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="cep">CEP</label>
+<form class="example-form" [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label for="cep">CEP</mat-label>
     <input
+      matInput
       mask="99999-999"
       type="text"
       class="form-control"
@@ -15,11 +16,12 @@
       id="cep"
       formControlName="cep"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="complemento">Complemento</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="complemento">Complemento</mat-label>
     <input
+      matInput
       mask="separator.2"
       thousandSeparator="."
       type="text"
@@ -28,89 +30,99 @@
       id="complemento"
       formControlName="complemento"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="bairro">bairro</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="bairro">bairro</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="bairro"
       id="bairro"
       formControlName="bairro"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="localidade">Localidade</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="localidade">Localidade</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="localidade"
       id="localidade"
       formControlName="localidade"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="uf">UF</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="uf">UF</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="uf"
       id="uf"
       formControlName="uf"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="ibge">IBGE</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="ibge">IBGE</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="ibge"
       id="ibge"
       formControlName="ibge"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="gia">GIA</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="gia">GIA</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="gia"
       id="gia"
       formControlName="gia"
     />
-  </div>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="ddd">DDD</label>
+  <mat-form-field class="example-full-width">
+    <mat-label for="ddd">DDD</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="ddd"
       id="ddd"
       formControlName="ddd"
     />
-  </div>
-  <div class="form-group">
-    <label for="siafi">SIAFI</label>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label for="siafi">SIAFI</mat-label>
     <input
+      matInput
       type="text"
       class="form-control"
       name="siafi"
       id="siafi"
       formControlName="siafi"
     />
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button="primary" type="submit">Salvar</button>
+    <button
+      mat-raised-button="primary"
+      type="button"
+      (click)="retornaUsuarioStorage()"
+    >
+      Retornar Usuário
+    </button>
   </div>
-
-  <input type="submit" value="Salvar" />
 </form>
-
-<input
-  type="button"
-  value="Retornar usuário"
-  (click)="retornaUsuarioStorage()"
-/>
